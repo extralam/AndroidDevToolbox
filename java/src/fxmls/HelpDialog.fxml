@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-preview-i18n-resource ../bundles/Bundle_en.properties?>
+<?scenebuilder-stylesheet ../res/AppTheme.css?>
+
+<GridPane hgap="14.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-1.0" minWidth="-1.0" vgap="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="AndroidDevToolbox.HelpDialogController">
+  <children>
+    <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="450.0" spacing="7.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <Label id="messageLabel" fx:id="helpDialogMsgLabel" styleClass="help-dialog-label" text="message" textAlignment="LEFT" wrapText="true">
+          <font>
+            <Font name="System Bold" size="13.0" />
+          </font>
+          <VBox.margin>
+            <Insets bottom="30.0" left="14.0" right="14.0" />
+          </VBox.margin>
+        </Label>
+      </children>
+    </VBox>
+    <Button id="okButton" fx:id="helpDialogOkBtn" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#dismissHelpDialog" styleClass="borderless-button" text="%ok" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+      <GridPane.margin>
+        <Insets />
+      </GridPane.margin>
+    </Button>
+    <Separator maxWidth="1.7976931348623157E308" prefWidth="-1.0" valignment="BOTTOM" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+  </children>
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="+Infinity" minWidth="-Infinity" />
+  </columnConstraints>
+  <padding>
+    <Insets top="14.0" />
+  </padding>
+  <rowConstraints>
+    <RowConstraints maxHeight="+Infinity" minHeight="-Infinity" prefHeight="-1.0" valignment="CENTER" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="-1.0" minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="40.0" vgrow="NEVER" />
+  </rowConstraints>
+</GridPane>

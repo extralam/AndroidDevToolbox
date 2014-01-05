@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-preview-i18n-resource ../bundles/Bundle_en.properties?>
+<?scenebuilder-stylesheet ../res/AppTheme.css?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER" gridLinesVisible="false" hgap="0.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="500.0" style="" styleClass="background" vgap="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="AndroidDevToolbox.ImageResizeController">
+  <children>
+    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <tabs>
+        <Tab fx:id="singleResizeTab" onSelectionChanged="#tabOnSelectionChanged" text="%ResizeSingleTab">
+          <content>
+            <GridPane styleClass="background, tab-content">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <Label styleClass="sub-title-label" text="%ResizeSelectFile" />
+                    <Separator prefWidth="-1.0" styleClass="sub-title-separator" />
+                    <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="-1.0" VBox.vgrow="NEVER">
+                      <children>
+                        <TextField fx:id="singleFileTextField" disable="false" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                        <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="32.0" prefWidth="15.0" HBox.hgrow="NEVER" />
+                        <Button id="browseBtn" fx:id="fileSelectBrowseBtn" mnemonicParsing="false" onMouseClicked="#browseForImageFile" prefHeight="32.0" styleClass="borderless-button" text="%ResizeBrowse" HBox.hgrow="NEVER" />
+                      </children>
+                    </HBox>
+                    <Pane minHeight="-Infinity" prefHeight="10.0" prefWidth="-1.0" />
+                    <Label styleClass="sub-title-label" text="%ResizeSelectedFileInfo" />
+                    <Separator prefWidth="200.0" styleClass="sub-title-separator" />
+                    <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="128.00009999999747" prefWidth="458.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <GridPane fx:id="imageFileInfoPane" maxHeight="1.7976931348623157E308" minWidth="465.0" prefHeight="128.0" prefWidth="465.0" visible="true">
+                          <children>
+                            <ImageView fx:id="fileInfoImageView" fitHeight="150.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+                            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                              <children>
+                                <Label fx:id="imageWidthLabel" styleClass="normal-label" text="%ResizeFileWidth" />
+                                <Label fx:id="imageHeightLabel" styleClass="normal-label" text="%ResizeFileHeight" />
+                                <Label fx:id="fileSizeLabel" styleClass="normal-label" text="%ResizeFileSize" />
+                              </children>
+                            </VBox>
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="200.0" percentWidth="40.0" prefWidth="208.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="20.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="243.0" prefWidth="243.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <GridPane fx:id="selectImageNoticePane" maxHeight="1.7976931348623157E308">
+                          <children>
+                            <Label contentDisplay="LEFT" styleClass="empty-notice-label" text="%ResizePleaseSelectFile" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                      </children>
+                    </StackPane>
+                  </children>
+                </VBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </content>
+        </Tab>
+        <Tab fx:id="batchResizeTab" onSelectionChanged="#tabOnSelectionChanged" text="%ResizeBatchTab">
+          <content>
+            <GridPane styleClass="background, tab-content">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <Label styleClass="sub-title-label" text="%ResizeSelectIamgeFolder" />
+                    <Separator prefWidth="-1.0" styleClass="sub-title-separator" />
+                    <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="-1.0" VBox.vgrow="NEVER">
+                      <children>
+                        <TextField id="singleFileTextField" fx:id="batchFileTextField" disable="false" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                        <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="32.0" prefWidth="15.0" HBox.hgrow="NEVER" />
+                        <Button id="browseBtn" fx:id="inputFolderSelectBrowseBtn" mnemonicParsing="false" onMouseClicked="#browseForInputFolder" prefHeight="32.0" styleClass="borderless-button" text="%ResizeBrowse" HBox.hgrow="NEVER" />
+                      </children>
+                    </HBox>
+                    <Pane minHeight="-Infinity" prefHeight="10.0" prefWidth="-1.0" />
+                    <Label styleClass="sub-title-label" text="%ResizeFolderInfo" />
+                    <Separator prefWidth="200.0" styleClass="sub-title-separator" />
+                    <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="128.00009999999747" prefWidth="458.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <GridPane id="imageFileInfoPane" fx:id="folderInfoPane" maxHeight="1.7976931348623157E308" minWidth="465.0" prefHeight="128.0" prefWidth="465.0" visible="true">
+                          <children>
+                            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                              <children>
+                                <Label id="fileSizeLabel" fx:id="folderNumOfImageLabel" styleClass="normal-label" text="%ResizeFolderImageCount" />
+                              </children>
+                            </VBox>
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="-1.0" prefWidth="-1.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <GridPane id="selectImageNoticePane" fx:id="selectFolderNoticePane" maxHeight="1.7976931348623157E308">
+                          <children>
+                            <Label contentDisplay="LEFT" styleClass="empty-notice-label" text="%ResizeSelectFolder" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                      </children>
+                    </StackPane>
+                  </children>
+                </VBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <GridPane depthTest="INHERIT" GridPane.columnIndex="0" GridPane.rowIndex="1">
+      <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+          <children>
+            <Label styleClass="sub-title-label" text="%ResizeImageDensity" />
+            <Separator prefWidth="200.0" styleClass="sub-title-separator" />
+            <HBox alignment="CENTER" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="-1.0" prefWidth="-1.0" styleClass="toggle-group-box" VBox.vgrow="NEVER">
+              <children>
+                <ToggleButton fx:id="densityBtnMdpi" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#setSourceDensity" selected="true" styleClass="toggle-group-button" text="%ResizeMdpi" HBox.hgrow="ALWAYS">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="imageDensityToggleGroup" />
+                  </toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="densityBtnHdpi" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#setSourceDensity" styleClass="toggle-group-button" text="%ResizeHdpi" toggleGroup="$imageDensityToggleGroup" HBox.hgrow="ALWAYS" />
+                <ToggleButton fx:id="densityBtnXHdpi" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#setSourceDensity" selected="false" styleClass="toggle-group-button" text="%ResizeXhdpi" toggleGroup="$imageDensityToggleGroup" HBox.hgrow="ALWAYS" />
+                <ToggleButton fx:id="densityBtnXXHdpi" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#setSourceDensity" selected="false" styleClass="toggle-group-button" text="%ResizeXXhdpi" toggleGroup="$imageDensityToggleGroup" HBox.hgrow="ALWAYS" />
+              </children>
+            </HBox>
+            <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="10.0" prefWidth="-1.0" />
+            <Label styleClass="sub-title-label" text="%ResizeOutputFolder" />
+            <Separator prefWidth="200.0" styleClass="sub-title-separator" />
+            <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="-1.0">
+              <children>
+                <TextField id="singleFileTextField" fx:id="outputFolderTextField" disable="false" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                <Separator halignment="RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="32.0" prefWidth="15.0" HBox.hgrow="NEVER" />
+                <Button id="browseBtn" fx:id="outputSelectBrowseBtn" mnemonicParsing="false" onMouseClicked="#browseForOutputFolder" prefHeight="32.0" styleClass="borderless-button" text="%ResizeBrowse" HBox.hgrow="NEVER" />
+              </children>
+            </HBox>
+            <Pane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="30.0" prefWidth="-1.0" />
+            <GridPane maxHeight="-1.0" maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
+              <children>
+                <Button fx:id="imageResizeBtn" alignment="CENTER" cancelButton="false" contentDisplay="LEFT" defaultButton="false" disable="true" mnemonicParsing="false" onMouseClicked="#startResizeImage" styleClass="confirm-button" text="%ResizeStart" textAlignment="LEFT" underline="false" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </VBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <padding>
+        <Insets left="10.0" right="10.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <GridPane.margin>
+        <Insets />
+      </GridPane.margin>
+    </GridPane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="360.0" minHeight="10.0" prefHeight="360.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="275.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>

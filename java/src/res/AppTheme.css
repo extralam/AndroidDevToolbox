@@ -1,0 +1,239 @@
+.background {
+    -fx-background-color: #f7f7f7;
+}
+
+.left-pane-bg {
+    -fx-background-color: #ebebeb;
+}
+
+.content-title-label {
+    -fx-font-size: 22pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+    -fx-opacity: 1;
+    -fx-padding: 0 0 0 20;
+}
+
+.sub-title-label {
+    -fx-font-size: 16pt;
+    -fx-text-fill: gray;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 4 0;
+}
+
+.sub-title-separator .line {
+    -fx-padding: 0 0 10 0;
+    -fx-border-color: gray transparent transparent transparent;
+}
+
+.sub-title-separator-no-padding .line {
+    -fx-padding: 0 0 0 0;
+    -fx-border-color: gray transparent transparent transparent;
+}
+
+.empty-notice-label {
+    -fx-font-size: 16pt;
+    -fx-text-fill: gray;
+}
+
+.normal-label {
+    -fx-font-size: 15pt;
+    -fx-padding: 2 2 2 2;
+}
+
+.bold-label {
+    -fx-font-weight: bold;   
+}
+
+.confirm-button {
+    -fx-font-size: 16pt;
+    -fx-background-color: #33B5E5;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+    -fx-padding: 10 25;
+    -fx-font-weight: bold;
+}
+
+.confirm-button:pressed {
+    -fx-background-color: #0099CC;
+}
+
+.confirm-button:focused{
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+}
+
+/* split-pane */
+.split-pane:horizontal > * > .split-pane-divider {
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    visibility: hidden;
+}
+
+.split-pane {
+    -fx-padding: 1 0 0 0;
+}
+
+/* left menu button */
+.leftmenu-button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 18pt;
+    -fx-text-fill: black;
+}
+
+.leftmenu-button:hover {
+    -fx-text-fill: #0099CC;
+}
+
+.leftmenu-button:pressed, .leftmenu-button:default:hover:pressed {
+  -fx-text-fill: #0099CC;
+}
+
+.leftmenu-button:selected {
+    -fx-background-radius: 6;
+    -fx-background-insets: 2 10;
+    -fx-background-color: #0099CC;
+    -fx-text-fill: white;
+}
+
+.leftmenu-button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.leftmenu-button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+/* toggle group button */
+.toggle-group-button {
+    -fx-padding: 8 12 8 12; 
+    -fx-font-size: 16pt;    
+    -fx-text-fill: black;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+}
+
+.toggle-group-button:focused{
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+}
+
+.toggle-group-button:selected {
+    -fx-background-color: #0099CC;
+    -fx-text-fill: white;
+}
+
+.toggle-group-button:selected:hover {
+    -fx-background-color: #0099CC;
+    -fx-text-fill: white;
+}
+
+.toggle-group-button:hover {
+    -fx-text-fill: #0099CC;
+}
+
+.toggle-group-box {
+    -fx-border-width: 1;
+    -fx-border-color: gainsboro; 
+}
+
+/* borderless button */
+.borderless-button {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 18pt;
+    -fx-text-fill: black;
+    -fx-background-radius: 0;
+}
+
+.borderless-button-small {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 15pt;
+    -fx-text-fill: black;
+    -fx-background-radius: 0;
+}
+
+.borderless-button-small:pressed {
+    -fx-background-color: lightblue;    
+}
+
+.borderless-button:pressed {
+    -fx-background-color: lightblue;
+}
+
+.borderless-button-small:hover {
+    -fx-text-fill: #33B5E5;    
+}
+
+.borderless-button:hover {
+    -fx-text-fill: #33B5E5;
+}
+
+/* tab-pane and tab */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.headers-region {
+    -fx-effect: null;
+}
+
+.tab {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: transparent;
+}
+
+.tab-label {
+     -fx-text-fill: dimgray;
+     -fx-font-size: 18pt;
+}
+
+.tab:selected {
+    -fx-border-color: #33B5E5;
+}
+
+.tab-content {
+    -fx-border-width: 1;   
+    -fx-border-color: gainsboro; 
+    -fx-padding: 10;
+    -fx-border-insets: 10;
+}
+
+.border-content {
+    -fx-border-width: 1;   
+    -fx-border-color: gainsboro;
+    -fx-border-insets: 0 10 0 10;
+    -fx-padding: 10;
+}
+
+/* text field */
+.text-input {
+    -fx-font-size: 14pt;
+}
+
+/* status bar */
+.bottom-status-bar {
+    -fx-background-color: dimgray;   
+    -fx-padding: 0 10 0 10;  
+}
+
+.bottom-status-bar-label {
+    -fx-text-fill: white;
+}
+
+.help-dialog-label {
+    -fx-font-size: 16pt;  
+    -fx-text-fill: black;  
+}
