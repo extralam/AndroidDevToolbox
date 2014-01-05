@@ -24,7 +24,7 @@ Scale the value of dimension in the dimen xml file with the supplied scale facto
 Binary releases for mac can be downloaded at the release section.  
 https://github.com/atominvention/AndroidDevToolbox/releases  
 Currently there is no binary build for Windows and Linux.  
-You need compile the source and build it for your platform.
+You need to compile the source and build it for your platform.
 
 ##Credits and License
 Copyright (C) 2014 AtomInvention  
