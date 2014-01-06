@@ -38,6 +38,14 @@ import java.util.ResourceBundle;
  */
 public class StatefulButtonController extends BaseController implements Initializable {
 
+    private static final String XML_TEMPLATE = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+            "<selector xmlns:android=\"http://schemas.android.com/apk/res/android\">\n" +
+            "\t<item android:state_focused=\"true\" android:drawable=\"@drawable/$focused$\"/>\n" +
+            "\t<item android:state_pressed=\"true\" android:drawable=\"@drawable/$pressed$\" />\n" +
+            "\t<item android:state_enabled=\"false\" android:drawable=\"@drawable/$disabled$\" />\n" +
+            "\t<item android:drawable=\"@drawable/$normal$\"/>\n" +
+            "</selector>";
+
     public interface OnStyleSetListener {
         public void onSet(int brightness, int transparency, State state);
     }
@@ -511,9 +519,7 @@ public class StatefulButtonController extends BaseController implements Initiali
                     }
 
                     // output xml
-                    String xmlPath = getClass().getClassLoader()
-                            .getResource(AppConfig.STATEFUL_TEMP_PATH).getPath();
-                    String fileContent = FileHelper.readFileAsString(xmlPath);
+                    String fileContent = XML_TEMPLATE;
 
                     normalFileName = normalFileName.replace("."+fileExt, "");
                     pressedFileName = pressedFileName.replace("."+fileExt, "");
