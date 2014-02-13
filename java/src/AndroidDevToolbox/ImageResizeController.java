@@ -51,6 +51,8 @@ public class ImageResizeController extends BaseController implements Initializab
     public GridPane selectFolderNoticePane;
     public Label folderNumOfImageLabel;
 
+    private final String FIXED_SPERATOR = "#!#";
+    
     private enum RESIZE_MODE {
         SINGLE,
         BATCH
@@ -267,10 +269,10 @@ public class ImageResizeController extends BaseController implements Initializab
                     FileHelper.makeFolder(xxhdpiPath);
 
                     ArrayList<String> targetFolders = new ArrayList<String>();
-                    targetFolders.add(mdpiPath + "#!#" + DENSITY_FACTORS[DENSITY.M_DPI.ordinal()]);
-                    targetFolders.add(hdpiPath + "#!#" + DENSITY_FACTORS[DENSITY.H_DPI.ordinal()]);
-                    targetFolders.add(xhdpiPath + "#!#" + DENSITY_FACTORS[DENSITY.XH_DPI.ordinal()]);
-                    targetFolders.add(xxhdpiPath + "#!#" + DENSITY_FACTORS[DENSITY.XXH_DPI.ordinal()]);
+                    targetFolders.add(mdpiPath + FIXED_SPERATOR + DENSITY_FACTORS[DENSITY.M_DPI.ordinal()]);
+                    targetFolders.add(hdpiPath + FIXED_SPERATOR + DENSITY_FACTORS[DENSITY.H_DPI.ordinal()]);
+                    targetFolders.add(xhdpiPath + FIXED_SPERATOR + DENSITY_FACTORS[DENSITY.XH_DPI.ordinal()]);
+                    targetFolders.add(xxhdpiPath + FIXED_SPERATOR + DENSITY_FACTORS[DENSITY.XXH_DPI.ordinal()]);
 
                     float sourceDensityFactor = DENSITY_FACTORS[density.ordinal()];
 
@@ -285,7 +287,7 @@ public class ImageResizeController extends BaseController implements Initializab
                         sourceDensityFolder = xxhdpiPath;
                     }
 
-                    targetFolders.remove(sourceDensityFolder + "#!#" + sourceDensityFactor);
+                    targetFolders.remove(sourceDensityFolder + FIXED_SPERATOR + sourceDensityFactor);
 
                     // copy original image to its density folder
                     if (resizeMode == RESIZE_MODE.SINGLE) {
@@ -335,7 +337,7 @@ public class ImageResizeController extends BaseController implements Initializab
                         float sourceHeight = bufferedImage.getHeight();
 
                         for (String targetFolderAndDensity : targetFolders) {
-                            String[] targetFolderDensity = targetFolderAndDensity.split("#!#");
+                            String[] targetFolderDensity = targetFolderAndDensity.split(FIXED_SPERATOR);
                             String folder = targetFolderDensity[0];
                             String targetDensityFactor = targetFolderDensity[1];
 
